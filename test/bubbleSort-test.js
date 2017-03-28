@@ -1,5 +1,5 @@
 const assert = require('chai').assert
-const locus  = require('locus')
+var random   = require('../lib/random.js')
 var bubbleSort  = require('../lib/bubbleSort.js')
 
 
@@ -45,6 +45,46 @@ describe("it should reorder the array ", ()=>{
     let arr =["c", 3, "b", 2, 1, "a"]
 
     assert.deepEqual(bubbleSort(arr), ["a", "b", "c", 1, 2, 3])
+  })
+
+
+  it("should take a small random array and order it properly", () =>{
+    let arr = random(50)
+    ///assert max isnt 100 with random
+    assert.notEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.notEqual(arr[0], Math.min(...arr) )
+
+    bubbleSort(arr)
+
+    assert.deepEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.deepEqual(arr[0], Math.min(...arr) )
+
+  })
+
+  it("should take a large random array and order it properly", () =>{
+    let arr = random(1000)
+
+
+    assert.notEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.notEqual(arr[0], Math.min(...arr) )
+
+    bubbleSort(arr)
+
+
+    assert.deepEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.deepEqual(arr[0], Math.min(...arr) )
+  })
+
+  it("should take a very large random array and order it properly", () =>{
+    let arr = random(4000)
+
+    assert.notEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.notEqual(arr[0], Math.min(...arr) )
+
+    bubbleSort(arr)
+
+    assert.deepEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.deepEqual(arr[0], Math.min(...arr) )
   })
 
 })

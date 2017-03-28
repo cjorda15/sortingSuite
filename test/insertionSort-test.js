@@ -1,5 +1,6 @@
-const assert = require('chai').assert
+const assert       = require('chai').assert
 var insertionSort  = require('../lib/insertionSort.js')
+var random         = require('../lib/random.js')
 
 describe("it should reorder the array ", ()=>{
 
@@ -19,7 +20,7 @@ describe("it should reorder the array ", ()=>{
   })
 
 
-  it('should take a longer array of numbers and make it ascending order', ()=>{
+  it('with a longer array of numbers and make it ascending order', ()=>{
     let arr = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
     insertionSort(arr)
@@ -40,10 +41,49 @@ describe("it should reorder the array ", ()=>{
     insertionSort(arr)
     assert.deepEqual(arr, [1])
   })
+
   it("should take both numbers and letters and sort them with letters in front", ()=>{
     let arr =["c", 3, "b", 2, 1, "a"]
 
     assert.deepEqual(insertionSort(arr), ["a", "b", "c", 1, 2, 3])
+  })
+
+  it("should take a small random array and order it properly", () =>{
+    let arr = random(50)
+
+    assert.notEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.notEqual(arr[0], Math.min(...arr) )
+
+    insertionSort(arr)
+
+    assert.deepEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.deepEqual(arr[0], Math.min(...arr) )
+
+  })
+
+  it("should take a large random array and order it properly", () =>{
+    let arr = random(1000)
+
+
+    assert.notEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.notEqual(arr[0], Math.min(...arr) )
+
+    insertionSort(arr)
+
+    assert.deepEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.deepEqual(arr[0], Math.min(...arr) )
+  })
+
+  it("should take a very large random array and order it properly", () =>{
+    let arr = random(4000)
+
+    assert.notEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.notEqual(arr[0], Math.min(...arr) )
+
+    insertionSort(arr)
+
+    assert.deepEqual(arr[arr.length-1], Math.max(...arr) )
+    assert.deepEqual(arr[0], Math.min(...arr) )
   })
 
 })
