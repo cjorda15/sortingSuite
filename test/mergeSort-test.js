@@ -1,4 +1,5 @@
 const assert = require('chai').assert
+const locus  = require('locus')
 var mergeSort  = require('../lib/mergeSort.js')
 
 

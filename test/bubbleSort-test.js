@@ -1,4 +1,5 @@
 const assert = require('chai').assert
+const locus  = require('locus')
 var bubbleSort  = require('../lib/bubbleSort.js')
 
 
@@ -14,10 +15,7 @@ describe("it should reorder the array ", ()=>{
   it('with letters to alphabetical order', ()=>{
     let arr = ["e", "f", "a", "d", "c", "b"]
 
-    bubbleSort(arr)
-
-
-    assert.deepEqual(arr, ['a', "b", "c", "d", "e", "f"])
+    assert.deepEqual(bubbleSort(arr), ['a', "b", "c", "d", "e", "f"])
   })
 
 
@@ -41,6 +39,12 @@ describe("it should reorder the array ", ()=>{
 
     bubbleSort(arr)
     assert.deepEqual(arr, [1])
+  })
+
+  it("should take both numbers and letters and sort them with letters in front", ()=>{
+    let arr =["c", 3, "b", 2, 1, "a"]
+
+    assert.deepEqual(bubbleSort(arr), ["a", "b", "c", 1, 2, 3])
   })
 
 })
