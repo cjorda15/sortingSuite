@@ -1,7 +1,8 @@
-const assert = require('chai').assert
+const assert   = require('chai').assert
 var mergeSort  = require('../lib/mergeSort.js')
-var random     = require('../lib/random.js')
-var locus = require('locus')
+var random     = require('./helpers/random.js')
+
+
 describe("it should reorder the array ", ()=>{
 
   it('with numbers to ascending order', ()=>{

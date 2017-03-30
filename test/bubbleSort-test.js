@@ -1,5 +1,5 @@
 const assert = require('chai').assert
-var random   = require('../lib/random.js')
+var random   = require('./helpers/random.js')
 var bubbleSort  = require('../lib/bubbleSort.js')
 
 
@@ -50,7 +50,6 @@ describe("it should reorder the array ", ()=>{
 
   it("should take a small random array and order it properly", () =>{
     let arr = random(50)
-    
     assert.notEqual(arr[arr.length-1], Math.max(...arr) )
     assert.notEqual(arr[0], Math.min(...arr) )
 

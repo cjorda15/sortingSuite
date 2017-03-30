@@ -1,6 +1,6 @@
 const assert       = require('chai').assert
 var insertionSort  = require('../lib/insertionSort.js')
-var random         = require('../lib/random.js')
+var random         = require('./helpers/random.js')
 
 describe("it should reorder the array ", ()=>{
 
