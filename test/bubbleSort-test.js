@@ -50,7 +50,7 @@ describe("it should reorder the array ", ()=>{
 
   it("should take a small random array and order it properly", () =>{
     let arr = random(50)
-    
+
     assert.notEqual(arr[arr.length-1], Math.max(...arr) )
     assert.notEqual(arr[0], Math.min(...arr) )
 
@@ -76,7 +76,7 @@ describe("it should reorder the array ", ()=>{
   })
 
   it("should take a very large random array and order it properly", () =>{
-    let arr = random(4000)
+    let arr = random(10000)
 
     assert.notEqual(arr[arr.length-1], Math.max(...arr) )
     assert.notEqual(arr[0], Math.min(...arr) )
