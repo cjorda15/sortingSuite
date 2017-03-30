@@ -50,7 +50,7 @@ describe("it should reorder the array ", ()=>{
 
   it("should take a small random array and order it properly", () =>{
     let arr = random(50)
-    ///assert max isnt 100 with random
+    
     assert.notEqual(arr[arr.length-1], Math.max(...arr) )
     assert.notEqual(arr[0], Math.min(...arr) )
 
