@@ -42,11 +42,11 @@ describe("it should reorder the array ", ()=>{
     assert.deepEqual(arr, [1])
   })
 
-  it("should take both numbers and letters and sort them with letters in front", ()=>{
-    let arr =["c", 3, "b", 2, 1, "a"]
-
-    assert.deepEqual(insertionSort(arr), ["a", "b", "c", 1, 2, 3])
-  })
+  // it("should take both numbers and letters and sort them with letters in front", ()=>{
+  //   let arr =["c", 3, "b", 2, 1, "a"]
+  //
+  //   assert.deepEqual(insertionSort(arr), ["a", "b", "c", 1, 2, 3])
+  // })
 
   it("should take a small random array and order it properly", () =>{
     let arr = random(50)
